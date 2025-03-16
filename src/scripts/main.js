@@ -370,8 +370,6 @@ console.log(properties); // you can remove it
 for (const person of people) {
   const tableRow = document.createElement('tr');
 
-  table.append(tableRow);
-
   for (const property of propertiesTexts) {
     const tableData = document.createElement('td');
 
@@ -401,5 +399,7 @@ for (const person of people) {
         tableData.textContent = Math.ceil(person.died / 100);
         break;
     }
+
+    table.append(tableRow);
   }
 }
