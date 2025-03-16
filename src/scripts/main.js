@@ -375,31 +375,36 @@ for (const person of people) {
 
     switch (property) {
       case 'Name':
-        tableRow.append(tableData);
         tableData.textContent = person.name;
+        tableRow.append(tableData);
+
         break;
       case 'Gender':
-        tableRow.append(tableData);
         tableData.textContent = person.sex === 'm' ? 'Male' : 'Female';
+        tableRow.append(tableData);
+
         break;
       case 'Born':
-        tableRow.append(tableData);
         tableData.textContent = person.born;
+        tableRow.append(tableData);
+
         break;
       case 'Died':
-        tableRow.append(tableData);
         tableData.textContent = person.died;
+        tableRow.append(tableData);
+
         break;
       case 'Age':
-        tableRow.append(tableData);
         tableData.textContent = person.died - person.born;
+        tableRow.append(tableData);
+
         break;
       case 'Century':
-        tableRow.append(tableData);
         tableData.textContent = Math.ceil(person.died / 100);
+        tableRow.append(tableData);
+
         break;
     }
-
-    table.append(tableRow);
   }
+  table.append(tableRow);
 }
