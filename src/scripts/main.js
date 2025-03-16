@@ -355,6 +355,51 @@ const people = [
 ];
 
 // eslint-disable-next-line no-console
-console.log(people); // you can remove it
+// console.log(people); // you can remove it
 
 // write your code here
+const table = document.querySelector('table');
+const properties = document.querySelectorAll('table th');
+const propertiesTexts = Array.from(properties).map(
+  (header) => header.textContent,
+);
+
+// eslint-disable-next-line no-console
+console.log(properties); // you can remove it
+
+for (const person of people) {
+  const tableRow = document.createElement('tr');
+
+  table.append(tableRow);
+
+  for (const property of propertiesTexts) {
+    const tableData = document.createElement('td');
+
+    switch (property) {
+      case 'Name':
+        tableRow.append(tableData);
+        tableData.textContent = person.name;
+        break;
+      case 'Gender':
+        tableRow.append(tableData);
+        tableData.textContent = person.sex === 'm' ? 'Male' : 'Female';
+        break;
+      case 'Born':
+        tableRow.append(tableData);
+        tableData.textContent = person.born;
+        break;
+      case 'Died':
+        tableRow.append(tableData);
+        tableData.textContent = person.died;
+        break;
+      case 'Age':
+        tableRow.append(tableData);
+        tableData.textContent = person.died - person.born;
+        break;
+      case 'Century':
+        tableRow.append(tableData);
+        tableData.textContent = Math.ceil(person.died / 100);
+        break;
+    }
+  }
+}
